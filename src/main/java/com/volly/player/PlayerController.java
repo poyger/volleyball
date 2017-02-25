@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class PlayerController {
     @RequestMapping(path = "/getPlayer", method = RequestMethod.GET)
     public String getPlayer() {
-        return "Poyan Gerami";
+        return "Poyan Gerami we are in heroku";
     }
 }
