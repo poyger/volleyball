@@ -1,8 +1,11 @@
 package com.volly.player;
 
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 /**
  * User: Poyan Gerami
@@ -11,8 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class PlayerController {
-    @RequestMapping(path = "/getPlayer", method = RequestMethod.GET)
-    public String getPlayer() {
-        return "Poyan Gerami we are in heroku testar";
+    @RequestMapping(path = "/getPlayer/firstname/{firstname}/lastname/{lastname}", method = GET)
+    public Player getPlayer(@PathVariable String firstname, @PathVariable String lastname) {
+        return new Player();
     }
+
+    @RequestMapping(path = "/createPlayer", method = POST)
+    public Player createPlayer(@RequestBody Player player) {
+        return player;
+    }
+
 }
