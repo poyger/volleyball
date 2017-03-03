@@ -24,8 +24,8 @@ public class PlayerController {
     }
 
     @RequestMapping(path = "/getPlayer/firstname/{firstname}/lastname/{lastname}", method = GET)
-    public Player getPlayer(@PathVariable String firstname, @PathVariable String lastname) {
-        return new Player();
+    public Player getPlayer(@PathVariable String firstName, @PathVariable String lastName) {
+        return new Player(firstName, lastName);
     }
 
     @RequestMapping(path = "/createPlayer", method = POST)
