@@ -23,7 +23,7 @@ public class PlayerController {
         this.playerRepository = playerRepository;
     }
 
-    @RequestMapping(path = "/getPlayer/firstname/{firstname}/lastname/{lastname}", method = GET)
+    @RequestMapping(path = "/getPlayer/firstname/{firstName}/lastname/{lastName}", method = GET)
     public Player getPlayer(@PathVariable String firstName, @PathVariable String lastName) {
         return new Player(firstName, lastName);
     }
